@@ -31,7 +31,7 @@ public class ResultadoModel {
                 Statement stq = db.connection.createStatement();
                 st.executeUpdate("insert into resultados (id, nombre) values(" + 0 + ", " + "'" + nombre + "')");
                 
-                ResultSet result = stq.executeQuery("select id from preguntas order by id desc limit 1");
+                ResultSet result = stq.executeQuery("select id from resultados order by id desc limit 1");
                 
                 if(result.next())
                 {
@@ -74,5 +74,28 @@ public class ResultadoModel {
         }
         
         return resultado;
+    }
+    
+    
+    public int insertResultado(int id, int aciertos, int errores) throws SQLException
+    {
+        int exitoso = 0;
+        try
+        {
+            if(db.connect())
+            {
+                Statement st = db.connection.createStatement();
+                st.executeUpdate("update resultados set aciertos = " + aciertos + ", errores = " + errores + " where id = " + id);
+                db.close();
+                exitoso = 1;
+            }
+        }
+        
+        catch(SQLException e)
+        {
+            throw new SQLException(e);
+        }
+        
+        return exitoso;
     }
 }

@@ -19,3 +19,20 @@ and open the template in the editor.
     background-color: #17a2b8;
 }
 
+#resultados
+{
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    height: 200px;
+    width: 500px;
+    background-color: #e2e6ea;
+}
+
+#texto
+{
+    position: fixed;
+    top: 35%;
+    height: 200px;
+    width: 500px;
+}

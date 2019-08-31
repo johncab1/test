@@ -140,9 +140,11 @@
                     <%
                 }
             %>
+            <br><br>
+            <input type="submit" class="btn btn-primary" value="Enviar">
             </div>
             
-            <input type="submit" class="btn btn-primary" value="Enviar">
+            
         </form>
     </body>
 </html>
